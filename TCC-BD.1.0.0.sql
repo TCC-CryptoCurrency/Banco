@@ -21,9 +21,10 @@ DROP TABLE Usuario
 --noticias--
 
 CREATE TABLE Interesse(
-	idInteresse INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	idUsuario INT FOREIGN KEY 
 		REFERENCES Usuario(idCarteira),
+	idTags INT FOREIGN KEY
+		REFERENCES Tags(idTags),
 )
 
 DROP TABLE Interesse
@@ -31,9 +32,7 @@ DROP TABLE Interesse
 CREATE TABLE Tags(
 	idTags INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	NomeTag VARCHAR(20) NOT NULL,
-	DescTag VARCHAR(50) NOT NULL,
-	idInteresse INT FOREIGN KEY
-		REFERENCES Interesse(idInteresse),
+	DescTag VARCHAR(50) NOT NULL
 )
 
 DROP TABLE Tags
@@ -112,7 +111,6 @@ DROP TABLE Transacao
 
 ---------------------INDEX---------------------
 CREATE INDEX XUSUARIO ON Usuario (idCarteira)
-CREATE INDEX XINTERESSE ON Interesse (idInteresse)
 CREATE INDEX XTAGS ON Tags (idTags)
 CREATE INDEX XNOTICIA ON Noticia (idNoticia)
 CREATE INDEX XMOEDA ON Moeda (idMoeda)
@@ -131,10 +129,32 @@ INSERT DetalheCarteira VALUES (1.12345678, 1, 1)
 
 INSERT Transacao VALUES (0.12345678, '07.06.2021', 2, 1, 1)
 
+INSERT Tags VALUES ('Bitcoin', 'Moeda Bitcoin')
+INSERT Tags VALUES ('Queda', 'Queda de preço')
+
+INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin')
+
+INSERT DetalheTagNoticia VALUES (1,1)
+INSERT DetalheTagNoticia VALUES (1,2)
+
+INSERT Interesse VALUES (1,1)
+INSERT Interesse VALUES (1,2)
+INSERT Interesse VALUES (2,2)
+
 ---------------------SELECTS---------------------
 SELECT * FROM Usuario
 SELECT * FROM Moeda
 SELECT * FROM DetalheCarteira
 SELECT * FROM Transacao
+SELECT * FROM Tags
+SELECT * FROM Noticia
+SELECT * FROM DetalheTagNoticia
+SELECT * FROM Interesse
+
+SELECT n.Titulo, n.DescNot, t.NomeTag FROM Noticia AS n
+	INNER JOIN DetalheTagNoticia AS d ON n.idNoticia = d.idNoticia
+	INNER JOIN Tags AS t ON t.idTags = d.idTags
+
+
 
 ---------------------PROCEDURES---------------------
