@@ -117,31 +117,54 @@ CREATE INDEX XMOEDA ON Moeda (idMoeda)
 CREATE INDEX XHISTORICO ON HistoricoMoeda (idHistorico)
 CREATE INDEX XTRANSACAO ON Transacao (idTransacao)
 
+---------------------SELECTS---------------------
 
 ---------------------INSERTS---------------------
+
+---------------------PROCEDURES---------------------
+
+
+
+/* A partir daqui, são só testes
+O que for colocar mesmo como fixo, coloca em cima */
+
+
+----------INSERTS----------
 INSERT Usuario VALUES ('Carlos', 'HaradaCarlos@carlos.com', '02.05.2000', '12345678910', '123@abc', 'ABCDEF', '07.06.2021')
 INSERT Usuario VALUES ('Pedro', 'FERNANDOPEDRO@PEDRO.NAN', '31.03.2001', '10987654321', 'abc123@','FEDCBA', '07.06.2021')
+INSERT Usuario VALUES ('Admin', 'admin@admin', '01.01.2003', '50313265810', 'admin', 'XYZABC', '21.07.2021')
 
 INSERT Moeda VALUES ('CPDCoin', 5.00)
 INSERT Moeda VALUES ('Quarteta', 3.00)
+INSERT Moeda VALUES ('Bitcoin', 166820.38)
+
+INSERT HistoricoMoeda VALUES ('21.07.2021', 166820.38, 3)
+INSERT HistoricoMoeda VALUES ('20.07.2021', 5.00, 1)
+INSERT HistoricoMoeda VALUES ('21.07.2021', 5.50, 1)
 
 INSERT DetalheCarteira VALUES (1.12345678, 1, 1)
+INSERT DetalheCarteira VALUES (21.54874458, 2, 1)
 
 INSERT Transacao VALUES (0.12345678, '07.06.2021', 2, 1, 1)
 
 INSERT Tags VALUES ('Bitcoin', 'Moeda Bitcoin')
 INSERT Tags VALUES ('Queda', 'Queda de preço')
+INSERT Tags VALUES ('Dogcoin', 'Moeda Dogcoin')
+INSERT Tags VALUES ('Aumento', 'Aumento de preço')
 
 INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin')
+INSERT Noticia VALUES ('Aumento na DogCoin', 'Nova moeda vem crescendo muito')
 
-INSERT DetalheTagNoticia VALUES (1,1)
-INSERT DetalheTagNoticia VALUES (1,2)
+INSERT DetalheTagNoticia VALUES (1, 1)
+INSERT DetalheTagNoticia VALUES (1, 2)
+INSERT DetalheTagNoticia VALUES (3, 3)
+INSERT DetalheTagNoticia VALUES (3, 4)
 
-INSERT Interesse VALUES (1,1)
-INSERT Interesse VALUES (1,2)
-INSERT Interesse VALUES (2,2)
+INSERT Interesse VALUES (1, 1)
+INSERT Interesse VALUES (1, 2)
+INSERT Interesse VALUES (2, 2)
 
----------------------SELECTS---------------------
+----------SELECTS----------
 SELECT * FROM Usuario
 SELECT * FROM Moeda
 SELECT * FROM DetalheCarteira
@@ -155,6 +178,10 @@ SELECT n.Titulo, n.DescNot, t.NomeTag FROM Noticia AS n
 	INNER JOIN DetalheTagNoticia AS d ON n.idNoticia = d.idNoticia
 	INNER JOIN Tags AS t ON t.idTags = d.idTags
 
+SELECT u.idCarteira, u.Nome, c.Saldo, m.NomeMoeda FROM Usuario AS u
+	INNER JOIN DetalheCarteira AS c ON u.idCarteira = c.idCarteira
+	INNER JOIN Moeda AS m ON c.idMoeda = m.idMoeda
 
-
----------------------PROCEDURES---------------------
+SELECT m.NomeMoeda, h.DataRegistro, h.ValorData FROM Moeda AS m
+	INNER JOIN HistoricoMoeda AS h ON m.idMoeda = h.idMoeda
+----------PROCEDURES----------
