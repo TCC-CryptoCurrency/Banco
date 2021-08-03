@@ -184,4 +184,29 @@ SELECT u.idCarteira, u.Nome, c.Saldo, m.NomeMoeda FROM Usuario AS u
 
 SELECT m.NomeMoeda, h.DataRegistro, h.ValorData FROM Moeda AS m
 	INNER JOIN HistoricoMoeda AS h ON m.idMoeda = h.idMoeda
+
 ----------PROCEDURES----------
+CREATE PROCEDURE usp_ChaveAleatoria
+AS
+	DECLARE @Chave VARCHAR(max) = 'ABCDFGHIJKLMNOPQRSTUVWXYZ0123456789'
+	DECLARE @Tamanho INT = 6
+	;with cte as(
+		SELECT 1 AS cont,
+			substring(@Chave, 1 + (abs(checksum(newid())) % len(@Chave)), 1) AS chave
+		UNION ALL
+		SELECT cont + 1,
+			substring(@Chave, 1 + (abs(checksum(newid())) % len(@Chave)), 1)
+		FROM cte WHERE cont < @tamanho)
+	SELECT(
+		SELECT '' + chave FROM cte
+		for xml path(''), type, root('txt')
+		).value('/txt[1]', 'varchar(max)')
+	OPTION (maxrecursion 0)
+	 
+
+EXEC usp_ChaveAleatoria
+DROP PROC usp_ChaveAleatoria
+
+
+
+
