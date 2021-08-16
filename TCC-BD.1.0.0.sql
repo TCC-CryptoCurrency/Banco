@@ -121,7 +121,7 @@ CREATE INDEX XTRANSACAO ON Transacao (idTransacao)
 ---------------------INSERTS---------------------
 INSERT Usuario VALUES ('Carlos', 'HaradaCarlos@carlos.com', '02.05.2000', '12345678910', '123@abc', 'ABCDEF', '07.06.2021')
 INSERT Usuario VALUES ('Pedro', 'FERNANDOPEDRO@PEDRO.NAN', '31.03.2001', '10987654321', 'abc123@','FEDCBA', '07.06.2021')
-INSERT Usuario VALUES ('João', 'Joazinho@joan.com', '55.08.2002', '13782910257', 'abc123@','ITOUET', '07.06.2021')
+INSERT Usuario VALUES ('Joao', 'Joazinho@joan.com', '55.08.2002', '13782910257', 'abc123@','ITOUET', '07.06.2021')
 INSERT Usuario VALUES ('Fernando', 'FERNANDO@pedro.NAN', '55.18.2003', '10947259461', 'abc123@','ORILPS', '07.06.2021')
 INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '55.05.2004', '1947926719', 'abc123@','UNTLAS', '07.06.2021')
 INSERT Usuario VALUES ('Ricardo', 'Ricado.watson@gmail,com', '22.08.2005', '19004567899', '12345*','ABBCDE', '07.06.2021')
