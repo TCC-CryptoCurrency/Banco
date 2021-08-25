@@ -119,16 +119,14 @@ CREATE INDEX XTRANSACAO ON Transacao (idTransacao)
 
 
 ---------------------INSERTS---------------------
-INSERT Usuario VALUES ('Carlos', 'HaradaCarlos@carlos.com', '02.05.2000', '12345678910', '123@abc', 'ABCDEF', '07.06.2021')
-INSERT Usuario VALUES ('Pedro', 'FERNANDOPEDRO@PEDRO.NAN', '31.03.2001', '10987654321', 'abc123@','FEDCBA', '07.06.2021')
-INSERT Usuario VALUES ('Joao', 'Joazinho@joan.com', '55.08.2002', '13782910257', 'abc123@','ITOUET', '07.06.2021')
-INSERT Usuario VALUES ('Fernando', 'FERNANDO@pedro.NAN', '55.18.2003', '10947259461', 'abc123@','ORILPS', '07.06.2021')
-INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '55.05.2004', '1947926719', 'abc123@','UNTLAS', '07.06.2021')
+INSERT Usuario VALUES ('Joao', 'Joazinho@joan.com', '22.08.2002', '13782910257', 'abc123@','ITOUET', '07.06.2021')
+INSERT Usuario VALUES ('Fernando', 'FERNANDO@pedro.NAN', '27.12.2003', '10947259461', 'abc123@','ORILPS', '07.06.2021')
+INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '20.05.2004', '1947926719', 'abc123@','UNTLAS', '07.06.2021')
 INSERT Usuario VALUES ('Ricardo', 'Ricado.watson@gmail,com', '22.08.2005', '19004567899', '12345*','ABBCDE', '07.06.2021')
-INSERT Usuario VALUES ('Guilherme', 'Like301@yahoo.com.br', '32.11.2004', '18009934512', 'SENHA123','LEDPDC', '07.06.2021')
-INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '55.04.2003', '18926514492', 'Alvin007','KQYPTW', '07.06.2021')
+INSERT Usuario VALUES ('Guilherme', 'Like301@yahoo.com.br', '30.11.2004', '18009934512', 'SENHA123','LEDPDC', '07.06.2021')
+INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '17.04.2003', '18926514492', 'Alvin007','KQYPTW', '07.06.2021')
 INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '1992880672', 'Kratos15','ENASKJ', '07.06.2021')
-INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '55.09.2001', '10987654321', 'Batata123','FGNMCX', '07.06.2021')
+INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '05.09.2001', '10987654321', 'Batata123','FGNMCX', '07.06.2021')
 
 INSERT Moeda VALUES ('CPDCoin', 5.00)
 INSERT Moeda VALUES ('Quarteta', 3.00)
