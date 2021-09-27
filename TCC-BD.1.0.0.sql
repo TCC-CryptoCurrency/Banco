@@ -59,6 +59,7 @@ CREATE TABLE Moeda(
 	idMoeda INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	NomeMoeda VARCHAR(15) NOT NULL UNIQUE,
 	ValorMoeda MONEY NOT NULL,
+	DataAtualizacao DATE NOT NULL,
 )
 
 DROP TABLE Moeda
@@ -128,15 +129,15 @@ INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '17.04.2003', '189265
 INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '1992880672', 'Kratos15','ENASKJ', '07.06.2021')
 INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '05.09.2001', '10987654321', 'Batata123','FGNMCX', '07.06.2021')
 
-INSERT Moeda VALUES ('CPDCoin', 5.00)
-INSERT Moeda VALUES ('Quarteta', 3.00)
-INSERT Moeda VALUES ('Passadina', 0.10)
-INSERT Moeda VALUES ('Aeropoto', 5.00)
-INSERT Moeda VALUES ('PneuQueimado', 5000.00)
-INSERT Moeda VALUES ('Bitcoin', 240000.00)
-INSERT Moeda VALUES ('Ethereum', 16000.00)
-INSERT Moeda VALUES ('Dogecoin', 1.75)
-INSERT Moeda VALUES ('Polkadot', 22.00)
+INSERT Moeda VALUES ('CPDCoin', 5.00, GETDATE())
+INSERT Moeda VALUES ('Quarteta', 3.00, GETDATE())
+INSERT Moeda VALUES ('Passadina', 0.10, GETDATE())
+INSERT Moeda VALUES ('Aeropoto', 5.00, GETDATE())
+INSERT Moeda VALUES ('PneuQueimado', 5000.00, GETDATE())
+INSERT Moeda VALUES ('Bitcoin', 240000.00, GETDATE())
+INSERT Moeda VALUES ('Ethereum', 16000.00, GETDATE())
+INSERT Moeda VALUES ('Dogecoin', 1.75, GETDATE())
+INSERT Moeda VALUES ('Polkadot', 22.00, GETDATE())
 
 INSERT DetalheCarteira VALUES (1.12345678, 1, 1)
 
