@@ -138,6 +138,19 @@ INSERT Moeda VALUES ('Bitcoin', 240000.00, GETDATE())
 INSERT Moeda VALUES ('Ethereum', 16000.00, GETDATE())
 INSERT Moeda VALUES ('Dogecoin', 1.75, GETDATE())
 INSERT Moeda VALUES ('Polkadot', 22.00, GETDATE())
+INSERT Moeda VALUES ('BitCoim', 0.02, GETDATE())
+
+INSERT HistoricoMoeda VALUES('25.09.2021', 3.50, 1)
+INSERT HistoricoMoeda VALUES('24.09.2021', 2.20, 1)
+INSERT HistoricoMoeda VALUES('27.09.2021', 2.00, 2)
+INSERT HistoricoMoeda VALUES('12.10.2021', 0.09, 3)
+INSERT HistoricoMoeda VALUES('12.10.2021', 5.10, 4)
+INSERT HistoricoMoeda VALUES('12.10.2021', 3000.00, 5)
+INSERT HistoricoMoeda VALUES('12.10.2021', 239999.00, 6)
+INSERT HistoricoMoeda VALUES('12.10.2021', 16291.26, 7)
+INSERT HistoricoMoeda VALUES('12.10.2021', 1.36, 8)
+INSERT HistoricoMoeda VALUES('12.10.2021', 31.25, 9)
+INSERT HistoricoMoeda VALUES('12.10.2021', 0.03, 10)
 
 INSERT DetalheCarteira VALUES (1.12345678, 1, 1)
 
@@ -167,6 +180,7 @@ INSERT Interesse VALUES (2,2)
 ---------------------SELECTS---------------------
 SELECT * FROM Usuario
 SELECT * FROM Moeda
+SELECT * FROM HistoricoMoeda
 SELECT * FROM DetalheCarteira
 SELECT * FROM Transacao
 SELECT * FROM Tags
