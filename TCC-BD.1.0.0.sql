@@ -181,3 +181,9 @@ SELECT n.Titulo, n.DescNot, t.NomeTag FROM Noticia AS n
 
 
 ---------------------PROCEDURES---------------------
+CREATE PROCEDURE usp_selecionar_tabelaIndex AS
+    SELECT M.idMoeda, M.NomeMoeda, M.ValorMoeda, H.ValorData ,H.DataRegistro FROM Moeda AS M 
+    INNER JOIN HistoricoMoeda AS H ON (M.idMoeda = H.idMoeda) AND H.DataRegistro IN(
+        SELECT  MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda)
+
+EXEC usp_selecionar_tabelaIndex
