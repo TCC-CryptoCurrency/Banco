@@ -19,7 +19,6 @@ CREATE TABLE Usuario(
 DROP TABLE Usuario
 
 --noticias--
-
 CREATE TABLE Interesse(
 	idUsuario INT FOREIGN KEY 
 		REFERENCES Usuario(idCarteira),
@@ -158,6 +157,17 @@ INSERT Transacao VALUES (0.12345678, '07.06.2021', 2, 1, 1)
 
 INSERT Tags VALUES ('Bitcoin', 'Moeda Bitcoin')
 INSERT Tags VALUES ('Queda', 'Queda de preço')
+INSERT Tags VALUES ('Em alta', 'Moedas que estão em alta')
+INSERT Tags VALUES ('Etherium', 'Moeda Etherium')
+INSERT Tags VALUES ('Dogecoin', 'Moeda Dogecoin')
+INSERT Tags VALUES ('Brasil', 'Brasil sobre Moedas')
+INSERT Tags VALUES ('Golpes', 'Golpes sobre moedas')
+INSERT Tags VALUES ('Mineração', 'Mineração de moedas')
+INSERT Tags VALUES ('Empresas', 'Empresas sobre moedas')
+INSERT Tags VALUES ('Novidades', 'Moedas novas')
+INSERT Tags VALUES ('China', 'China sobre moedas')
+INSERT Tags VALUES ('Elon Musk', 'Elon Musk')
+
 
 INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin')
 INSERT Noticia VALUES ('Hiperinflação', 'Albania Atinge Hiperinflação')
