@@ -1,6 +1,6 @@
 CREATE DATABASE BancoTCC
-DROP DATABASE BancoTCC
 USE BancoTCC
+DROP DATABASE BancoTCC
 USE master
 SET DATEFORMAT DMY
 
@@ -206,7 +206,8 @@ SELECT n.Titulo, n.DescNot, t.NomeTag FROM Noticia AS n
 	INNER JOIN DetalheTagNoticia AS d ON n.idNoticia = d.idNoticia
 	INNER JOIN Tags AS t ON t.idTags = d.idTags
 
-
+SELECT T.NomeTag FROM Tags T INNER JOIN
+    Interesse I ON I.idTags = T.idTags AND I.idUsuario = 1
 
 ---------------------PROCEDURES---------------------
 CREATE PROCEDURE usp_selecionar_tabelaIndex AS
