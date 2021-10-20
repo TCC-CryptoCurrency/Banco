@@ -216,3 +216,13 @@ CREATE PROCEDURE usp_selecionar_tabelaIndex AS
         SELECT  MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda)
 
 EXEC usp_selecionar_tabelaIndex
+
+CREATE PROCEDURE usp_selecionar_moedaUsuario 
+@idUsu INT
+AS
+    SELECT M.idMoeda, M.NomeMoeda, M.ValorMoeda, H.ValorData, H.DataRegistro, D.Saldo FROM ((Moeda AS M 
+    INNER JOIN HistoricoMoeda AS H ON M.idMoeda = H.idMoeda AND H.DataRegistro IN(
+        SELECT MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda))
+    INNER JOIN DetalheCarteira AS D ON D.idMoeda = M.idMoeda) WHERE idCarteira = @idUsu
+
+EXEC usp_selecionar_moedaUsuario 1
