@@ -225,4 +225,4 @@ AS
         SELECT MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda))
     INNER JOIN DetalheCarteira AS D ON D.idMoeda = M.idMoeda) WHERE idCarteira = @idUsu
 
-EXEC usp_selecionar_moedaUsuario 1
+EXEC usp_selecionar_moedaUsuario 1 
