@@ -7,14 +7,12 @@ SET DATEFORMAT DMY
 
 ---------------------TABELAS---------------------
 CREATE TABLE Usuario(
-	idCarteira INT IDENTITY(1,1) NOT NULL PRIMARY KEY, --discutir isso aqui--
+	idCarteira INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	Nome VARCHAR(30) NOT NULL,
 	Email VARCHAR(30) NOT NULL,
 	DataNasc DATE NOT NULL,
 	CPF VARCHAR(11) NOT NULL,
 	Senha VARCHAR(24) NOT NULL,
-	ChaveTemp VARCHAR(6) NOT NULL,
-	DataChave DATE NOT NULL,
 )
 
 DROP TABLE Usuario
@@ -84,14 +82,14 @@ CREATE TABLE DetalheCarteira(
 	CONSTRAINT FK_Carteira FOREIGN KEY(idCarteira) REFERENCES Usuario(idCarteira)
 )
 
---pode ignorar daqui--
+/*
 ALTER TABLE DetalheCarteira
 ADD CONSTRAINT PK_DestinoMoeda PRIMARY KEY(idCarteira, idMoeda)
 ALTER TABLE DetalheCarteira
 ADD CONSTRAINT FK_idMoeda FOREIGN KEY(idMoeda) REFERENCES Moeda(idMoeda)
 ALTER TABLE DetalheCarteira
 ADD CONSTRAINT FK_idCarteira FOREIGN KEY(idCarteira) REFERENCES Usuario(idCarteira)
---até aqui--
+*/
 
 DROP TABLE DetalheCarteira
 
@@ -123,14 +121,15 @@ CREATE INDEX XTRANSACAO ON Transacao (idTransacao)
 
 
 ---------------------INSERTS---------------------
-INSERT Usuario VALUES ('Joao', 'Joazinho@joan.com', '22.08.2002', '13782910257', 'abc123@','ITOUET', '07.06.2021')
-INSERT Usuario VALUES ('Fernando', 'FERNANDO@pedro.NAN', '27.12.2003', '10947259461', 'abc123@','ORILPS', '07.06.2021')
-INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '20.05.2004', '1947926719', 'abc123@','UNTLAS', '07.06.2021')
-INSERT Usuario VALUES ('Ricardo', 'Ricado.watson@gmail,com', '22.08.2005', '19004567899', '12345*','ABBCDE', '07.06.2021')
-INSERT Usuario VALUES ('Guilherme', 'Like301@yahoo.com.br', '30.11.2004', '18009934512', 'SENHA123','LEDPDC', '07.06.2021')
-INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '17.04.2003', '18926514492', 'Alvin007','KQYPTW', '07.06.2021')
-INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '1992880672', 'Kratos15','ENASKJ', '07.06.2021')
-INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '05.09.2001', '10987654321', 'Batata123','FGNMCX', '07.06.2021')
+INSERT Usuario VALUES ('admin', 'admin@admin.com', '20.10.2021','12345678900','admin')
+INSERT Usuario VALUES ('Joao', 'Joazinho@joan.com', '22.08.2002', '13782910257', 'abc123@')
+INSERT Usuario VALUES ('Fernando', 'FERNANDO@pedro.NAN', '27.12.2003', '10947259461', 'abc123@')
+INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '20.05.2004', '1947926719', 'abc123@')
+INSERT Usuario VALUES ('Ricardo', 'Ricado.watson@gmail,com', '22.08.2005', '19004567899', '12345*')
+INSERT Usuario VALUES ('Guilherme', 'Like301@yahoo.com.br', '30.11.2004', '18009934512', 'SENHA123')
+INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '17.04.2003', '18926514492', 'Alvin007')
+INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '1992880672', 'Kratos15')
+INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '05.09.2001', '10987654321', 'Batata123')
 
 INSERT Moeda VALUES ('Cardano', 2.23, GETDATE())
 INSERT Moeda VALUES ('Binance', 475.39, GETDATE())
@@ -145,6 +144,9 @@ INSERT Moeda VALUES ('USD', 1.00, GETDATE())
 
 INSERT HistoricoMoeda VALUES('25.09.2021', 3.50, 1)
 INSERT HistoricoMoeda VALUES('24.09.2021', 2.20, 1)
+INSERT HistoricoMoeda VALUES ('26.09.2021', 1.10, 1)
+INSERT HistoricoMoeda VALUES ('27.09.2021', 0.50, 1)
+INSERT HistoricoMoeda VALUES ('28.09.2021', 5.15, 1)
 INSERT HistoricoMoeda VALUES('27.09.2021', 2.00, 2)
 INSERT HistoricoMoeda VALUES('12.10.2021', 0.09, 3)
 INSERT HistoricoMoeda VALUES('12.10.2021', 5.10, 4)
@@ -208,6 +210,8 @@ SELECT n.Titulo, n.DescNot, t.NomeTag FROM Noticia AS n
 
 SELECT T.NomeTag FROM Tags T INNER JOIN
     Interesse I ON I.idTags = T.idTags AND I.idUsuario = 1
+
+SELECT DataRegistro, ValorData FROM HistoricoMoeda WHERE idMoeda = 1
 
 ---------------------PROCEDURES---------------------
 CREATE PROCEDURE usp_selecionar_tabelaIndex AS
