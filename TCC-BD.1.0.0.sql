@@ -217,11 +217,12 @@ SELECT DataRegistro, ValorData FROM HistoricoMoeda WHERE idMoeda = 1
 CREATE PROCEDURE usp_selecionar_tabelaIndex AS
     SELECT M.idMoeda, M.NomeMoeda, M.ValorMoeda, H.ValorData ,H.DataRegistro FROM Moeda AS M 
     INNER JOIN HistoricoMoeda AS H ON (M.idMoeda = H.idMoeda) AND H.DataRegistro IN(
-        SELECT  MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda)
+        SELECT MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda)
 
 EXEC usp_selecionar_tabelaIndex
 
-CREATE PROCEDURE usp_selecionar_moedaUsuario 
+-------------------------------------------------
+CREATE PROCEDURE usp_selecionar_moedaUsuario
 @idUsu INT
 AS
     SELECT M.idMoeda, M.NomeMoeda, M.ValorMoeda, H.ValorData, H.DataRegistro, D.Saldo FROM ((Moeda AS M 
@@ -229,4 +230,46 @@ AS
         SELECT MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda))
     INNER JOIN DetalheCarteira AS D ON D.idMoeda = M.idMoeda) WHERE idCarteira = @idUsu
 
-EXEC usp_selecionar_moedaUsuario 1 
+EXEC usp_selecionar_moedaUsuario 1
+
+------------------------------------------------
+CREATE PROCEDURE usp_selecionarTagsIdUsuario
+@idUsu INT
+AS
+SELECT T.NomeTag FROM Interesse I INNER JOIN 
+    Tags T ON I.idTags = T.idTags WHERE I.idUsuario = @idUsu 
+
+EXEC usp_selecionarTagsIdUsuario 1
+
+------------------------------------------------
+CREATE PROCEDURE usp_selecionar_walletusuario --apenas de teste, não tá no ASP
+@idUsu INT,
+@filtro INT
+AS
+    SELECT M.idMoeda, M.NomeMoeda, M.ValorMoeda, H.ValorData, H.DataRegistro, D.Saldo FROM ((Moeda AS M 
+    INNER JOIN HistoricoMoeda AS H ON M.idMoeda = H.idMoeda AND H.DataRegistro IN(
+        SELECT MAX(DataRegistro) FROM HistoricoMoeda GROUP BY idMoeda))
+    INNER JOIN DetalheCarteira AS D ON D.idMoeda = M.idMoeda) WHERE idCarteira = 1 
+
+EXEC usp_selecionar_walletusuario 1, 1
+
+------------------------------------------------
+CREATE PROCEDURE usp_selecionar_noticiaUsuario
+@idUsu INT
+AS
+SELECT N.idNoticia, N.Titulo, N.DescNot, N.DataNot FROM Noticia AS N
+    inner join DetalheTagNoticia AS D ON D.idNoticia = N.idNoticia AND D.idTags IN (
+    SELECT T.idTags FROM Tags T INNER JOIN Interesse I ON I.idTags = T.idTags AND I.idUsuario = @idUsu) 
+    GROUP BY N.idNoticia, N.Titulo, N.DescNot, N.DataNot
+
+EXEC usp_selecionar_noticiaUsuario 1
+
+------------------------------------------------
+CREATE PROCEDURE usp_selecionarnoticiaTag
+@nomeTag VARCHAR(20)
+AS 
+SELECT N.* FROM Noticia N INNER JOIN 
+    DetalheTagNoticia D ON (D.idNoticia = N.idNoticia) AND D.idTags IN(
+    SELECT T.idTags FROM Tags T WHERE T.NomeTag = @nomeTag)
+
+EXEC usp_selecionarnoticiaTag 'Queda'
