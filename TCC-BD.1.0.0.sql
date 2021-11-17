@@ -40,6 +40,7 @@ CREATE TABLE Noticia(
 	Titulo VARCHAR(20) NOT NULL,
 	DescNot VARCHAR(50) NOT NULL,
 	DataNot DATE NOT NULL,
+	LinkNot VARCHAR(200) NOT NULL,
 )
 
 DROP TABLE Noticia
@@ -175,16 +176,16 @@ INSERT Tags VALUES ('China', 'China sobre moedas')
 INSERT Tags VALUES ('Elon Musk', 'Elon Musk')
 
 
-INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin', '13.05.2021')
-INSERT Noticia VALUES ('El Salvador', 'El Salvador aceita Bitcoin', '07.09.2021')
-INSERT Noticia VALUES ('Empiricus', 'Nova moeda de Ex-Funcionarios do Facebook', '14.07.2021')
-INSERT Noticia VALUES ('Corinthians', 'Clube Paulista anuncia nova moeda', '02.09.2021')
-INSERT Noticia VALUES ('Flamengo', 'Time de futebol anuncia nova moeda', '13.10.2021')
-INSERT Noticia VALUES ('Atlas Quantum', 'Empresa rouba milhões de Brasileiros', '19.04.2021')
-INSERT Noticia VALUES ('Round 6', 'Aumentam buscas por moedas Sul-Coreanas', '15.10.2021')
-INSERT Noticia VALUES ('Tesla rejeita moeda', 'Tesla voltará a aceitar Bitcoin como pagamento', '21.07.2021')
-INSERT Noticia VALUES ('Mineração', 'Aprenda como funciona a mineração atualmente', '26.10.2021')
-INSERT Noticia VALUES ('China sem moedas', 'China bane criptomoedas no país','24.09.2021')
+INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin', '13.05.2021', 'https://www.bbc.com/portuguese/internacional-57100846')
+INSERT Noticia VALUES ('El Salvador', 'El Salvador aceita Bitcoin', '07.09.2021','https://g1.globo.com/economia/noticia/2021/09/09/bitcoins-a-confusao-em-el-salvador-com-a-adocao-da-criptomoeda-como-moeda-oficial.ghtml')
+INSERT Noticia VALUES ('Empiricus', 'Nova moeda de Ex-Funcionarios do Facebook', '14.07.2021','https://www.seudinheiro.com/2021/patrocinado/empiricus/ex-funcionarios-do-facebook-criam-moeda-digital-semelhante-ao-bitcoin-para-acabar-com-monopolio-de-dados-e-analista-preve-um-grande-salto-na-cotacao-em-breve-brdfv006/')
+INSERT Noticia VALUES ('Corinthians', 'Clube Paulista anuncia nova moeda', '02.09.2021','https://www.istoedinheiro.com.br/criptomoeda-do-corinthians-arrecada-r-87-milhoes-e-esgota-em-menos-de-2-horas/')
+INSERT Noticia VALUES ('Flamengo', 'Time de futebol anuncia nova moeda', '13.10.2021','https://br.investing.com/news/cryptocurrency-news/flamengo-anuncia-data-de-lancamento-de-sua-criptomoeda-927936#:~:text=O%20Flamengo%2C%20time%20de%20futebol,que%20será%20chamada%20de%20%24MENGO')
+INSERT Noticia VALUES ('Atlas Quantum', 'Empresa rouba milhões de Brasileiros', '19.04.2021','https://cointelegraph.com.br/news/r-800-thousand-loss-record-tv-denounces-atlas-quantum-for-a-r-45-billion-bitcoin-scam')
+INSERT Noticia VALUES ('Round 6', 'Aumentam buscas por moedas Sul-Coreanas', '15.10.2021','https://exame.com/pop/efeito-round-6-buscas-por-moeda-sul-coreana-no-google-disparam-700/')
+INSERT Noticia VALUES ('Tesla rejeita moeda', 'Tesla voltará a aceitar Bitcoin como pagamento', '21.07.2021','https://oglobo.globo.com/economia/tesla-provavelmente-voltara-aceitar-bitcoin-como-forma-de-pagamento-diz-musk-25120270')
+INSERT Noticia VALUES ('Mineração', 'Aprenda como funciona a mineração atualmente', '26.10.2021','https://canaltech.com.br/criptomoedas/como-funciona-a-mineracao-do-bitcoin-191213/')
+INSERT Noticia VALUES ('China sem moedas', 'China bane criptomoedas no país','24.09.2021','https://www.istoedinheiro.com.br/china-proibe-criptomoedas-e-valor-do-bitcoin-despenca-nesta-sexta-feira-24/')
 
 INSERT DetalheTagNoticia VALUES (1,1)
 INSERT DetalheTagNoticia VALUES (1,2)
