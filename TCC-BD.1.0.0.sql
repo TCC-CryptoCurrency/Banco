@@ -11,7 +11,7 @@ CREATE TABLE Usuario(
 	Nome VARCHAR(30) NOT NULL,
 	Email VARCHAR(30) NOT NULL,
 	DataNasc DATE NOT NULL,
-	CPF VARCHAR(11) NOT NULL,
+	CPF VARCHAR(15) NOT NULL,
 	Senha VARCHAR(24) NOT NULL,
 )
 
@@ -178,7 +178,7 @@ INSERT Tags VALUES ('Elon Musk', 'Elon Musk')
 
 INSERT Noticia VALUES ('Queda do Bitcoin', 'Elon Musk não aceita mais bitcoin', '13.05.2021', 'https://www.bbc.com/portuguese/internacional-57100846')
 INSERT Noticia VALUES ('El Salvador', 'El Salvador aceita Bitcoin', '07.09.2021','https://g1.globo.com/economia/noticia/2021/09/09/bitcoins-a-confusao-em-el-salvador-com-a-adocao-da-criptomoeda-como-moeda-oficial.ghtml')
-INSERT Noticia VALUES ('Empiricus', 'Nova moeda de Ex-Funcionarios do Facebook', '14.07.2021','https://www.seudinheiro.com/2021/patrocinado/empiricus/ex-funcionarios-do-facebook-criam-moeda-digital-semelhante-ao-bitcoin-para-acabar-com-monopolio-de-dados-e-analista-preve-um-grande-salto-na-cotacao-em-breve-brdfv006/')
+INSERT Noticia VALUES ('Empiricus', 'Nova moeda de Ex-Funcionarios do Facebook', '14.07.2021','https://www.moneytimes.com.br/conteudo-de-marca/ex-funcionarios-de-google-e-facebook-criam-criptomoeda-da-nova-internet-valorizacao-explosiva-deixa-bitcoin-no-chinelo-brdfv005/')
 INSERT Noticia VALUES ('Corinthians', 'Clube Paulista anuncia nova moeda', '02.09.2021','https://www.istoedinheiro.com.br/criptomoeda-do-corinthians-arrecada-r-87-milhoes-e-esgota-em-menos-de-2-horas/')
 INSERT Noticia VALUES ('Flamengo', 'Time de futebol anuncia nova moeda', '13.10.2021','https://br.investing.com/news/cryptocurrency-news/flamengo-anuncia-data-de-lancamento-de-sua-criptomoeda-927936#:~:text=O%20Flamengo%2C%20time%20de%20futebol,que%20será%20chamada%20de%20%24MENGO')
 INSERT Noticia VALUES ('Atlas Quantum', 'Empresa rouba milhões de Brasileiros', '19.04.2021','https://cointelegraph.com.br/news/r-800-thousand-loss-record-tv-denounces-atlas-quantum-for-a-r-45-billion-bitcoin-scam')
