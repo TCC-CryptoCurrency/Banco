@@ -129,7 +129,7 @@ INSERT Usuario VALUES ('Thiago', 'Thiago@harada.com', '20.05.2004', '194.379.267
 INSERT Usuario VALUES ('Ricardo', 'Ricado.watson@gmail,com', '22.08.2005', '190.045.678-99', '12345*')
 INSERT Usuario VALUES ('Guilherme', 'Like301@yahoo.com.br', '30.11.2004', '180.099.345-12', 'SENHA123')
 INSERT Usuario VALUES ('Oscar', 'Oscar_tiago@hotmail.com', '17.04.2003', '189.265.144-92', 'Alvin007')
-INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '199.28.806-72', 'Kratos15')
+INSERT Usuario VALUES ('Aline', 'Aln.2002@outlook.com', '18.03.2002', '019.928.806-72', 'Kratos15')
 INSERT Usuario VALUES ('Marcia', 'Marciax@gamail.com', '05.09.2001', '109.876.543-21', 'Batata123')
 
 INSERT Moeda VALUES ('Cardano', 2.23, GETDATE())
