@@ -214,9 +214,27 @@ INSERT HistoricoMoeda VALUES('21.11.2021', 5.61, 10)
 INSERT HistoricoMoeda VALUES('22.11.2021', 5.59, 10)
 INSERT HistoricoMoeda VALUES('23.11.2021', 5.57, 10)
 
+select * from HistoricoMoeda
+delete from HistoricoMoeda
+
 INSERT DetalheCarteira VALUES (1.00, 1, 1)
 
-INSERT Transacao VALUES (0.12345678, '07.06.2021', 2, 1, 1)
+INSERT Transacao VALUES (3, '07.06.2021', null, 1, 1)
+INSERT Transacao VALUES (2.12294, '15.07.2021', null, 1, 1)
+INSERT Transacao VALUES (0.26291, '13.09.2021', 2, 2, 1)
+INSERT Transacao VALUES (46.46219, '27.09.2021', null, 3, 1)
+INSERT Transacao VALUES (17.98734, '21.10.2021', 2, 1, 1)
+INSERT Transacao VALUES (8.46378, '25.10.2021', null, 1, 1)
+INSERT Transacao VALUES (2.89345, '25.10.2021', 2, 4, 1)
+INSERT Transacao VALUES (5.32657, '09.11.2021', null, 4, 1)
+INSERT Transacao VALUES (0.467835, '10.11.2021', 2, 2, 1)
+INSERT Transacao VALUES (5.945738, '22.11.2021', 2, 3, 1)
+
+INSERT Transacao VALUES (0.67832, '22.07.2021', null, 5, 2)
+INSERT Transacao VALUES (32.3467, '11.09.2021', 1, 3, 2)
+INSERT Transacao VALUES (13.346728, '31.10.2021', null, 1, 2)
+INSERT Transacao VALUES (0.14256, '12.11.2021', null, 7, 2)
+INSERT Transacao VALUES (0.325587, '20.11.2021', 1, 2, 2)
 
 INSERT Tags VALUES ('Bitcoin', 'Moeda Bitcoin')
 INSERT Tags VALUES ('Queda', 'Queda de preço')
