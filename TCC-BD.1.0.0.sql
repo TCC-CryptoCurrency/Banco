@@ -143,6 +143,8 @@ INSERT Moeda VALUES ('Dogecoin', 1.21, GETDATE())
 INSERT Moeda VALUES ('Polkadot', 216.11, GETDATE())
 INSERT Moeda VALUES ('USD', 5.60, GETDATE())
 
+UPDATE Moeda SET DataAtualizacao ='24.11.2021'
+
 INSERT HistoricoMoeda Values('17.11.2021', 10.37, 1)
 INSERT HistoricoMoeda Values('18.11.2021', 9.92, 1)
 INSERT HistoricoMoeda Values('19.11.2021', 10.47, 1)
